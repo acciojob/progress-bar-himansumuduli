@@ -1,4 +1,8 @@
 //your JS code here. If required.
+
+
+
+
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
@@ -14,7 +18,7 @@ next.addEventListener('click', () => {
     }
 
     update();
-});
+})
 
 prev.addEventListener('click', () => {
     currentActive--;
@@ -24,23 +28,17 @@ prev.addEventListener('click', () => {
     }
 
     update();
-});
+})
 
 function update() {
     circles.forEach((circle, idx) => {
-        if (idx < currentActive) {
-            circle.classList.add('active');
-        } else {
-            circle.classList.remove('active');
-        }
+     idx<currentActive ? circle.classList.add("active"):
+		 circle.classList.remove("active");
     });
 
     lines.forEach((line, idx) => {
-        if (idx < currentActive - 1) {
-            line.classList.add('active');
-        } else {
-            line.classList.remove('active');
-        }
+     idx<currentActive-1 ? line.classList.add("active"):
+		 line.classList.remove("active");
     });
 
 	prev.disabled= currentActive ===1;
